@@ -8,7 +8,7 @@ const Spinner = ({size}) =>
         <ActivityIndicator
             animating={true}
             color={stylesGlobal.SPINNER}
-            size={size || 100}
+            size={size || 1}
         />
     </View>
 

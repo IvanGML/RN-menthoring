@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { View, Image, Text, CheckBox } from 'react-native';
+import { View, Image, Text } from 'react-native';
 import { DefaultButton as Button } from '../../components/Button';
 import { CustomInput as Input } from '../../components/Input';
 import { styles } from './styles';
@@ -67,10 +67,10 @@ class DumpLogoPage extends Component {
                 />
                 <View style={styles.credentialWrapper}>
                     <Text style={styles.credentialText}>Do you want to save credentials?</Text>
-                    <CheckBox 
+                    {/* <CheckBox 
                         style={styles.checkBox}
                         onValueChange={this.switchCheckBox} 
-                        value={this.props.checked}/>
+                        value={this.props.checked}/> */}
                 </View>
                 <Button
                     title="SIGN IN"

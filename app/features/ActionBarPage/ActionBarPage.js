@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {ScrollView, View, Text, TouchableOpacity, TouchableHighlight} from 'react-native';
-import Icon from 'react-native-vector-icons/Ionicons';
 import {styles} from './styles';
-// import {Controll} from "../../components/Controll";
 import {firebaseApp} from '../../firebase';
 import {goToOffice, 
         goToHome, 
@@ -23,19 +21,19 @@ const Trigger = props => {
     let actionIcon = () => {
         switch (props.title) {
             case HOME:
-                return <Icon name="md-person-add" size={45} color="white"/>;
+                return null;
             case OFFICE:
-                return <Icon name="md-person-add" size={45} color="white"/>;
+                return null;
             case TECH_TALK:
-                return <Icon name="md-person-add" size={45} color="white"/>;
+                return null;
             case SOFT_SKILLS:
-                return <Icon name="md-contacts" size={45} color="white"/>;
+                return null;
             case SELF_DEV:
-                return <Icon name="md-person-add" size={45} color="white"/>;
+                return null;
             case SLEEP:
-                return <Icon name="md-person-add" size={45} color="white"/>;
+                return null;
             default:
-                return <Icon name="md-person-add" size={35} color="white"/>;
+                return null;
         }
     }
     let currentAction = () => {
@@ -79,7 +77,7 @@ class DumpActionBarPage extends Component {
                       onPress={this.props.switch}>
                     <View style={styles.closeButtonContainer}>
                       <Text>
-                        <Icon name="ios-arrow-back-outline" size={45} color="white"/>;
+                        {'Quite'};
                       </Text>
                     </View>
                 </TouchableOpacity>

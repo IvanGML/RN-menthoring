@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     buttonText: {
         fontSize: 35,
         fontWeight: '900',
-        fontFamily: 'sans-serif-condensed',
+        // fontFamily: 'sans-serif-condensed',
         color: generalStyles.BUTTON_TEXT_LIGHT
     }
 });
