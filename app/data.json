@@ -1,0 +1,18 @@
+{
+    "item_1": {
+        "title": "Personal",
+        "progress": 0
+    },
+    "item_2": {
+        "title": "Project Activity",
+        "progress": 0
+    },
+    "item_3": {
+        "title": "Soft Skills",
+        "progress": 0
+    },
+    "item_4": {
+        "title": "Hard Skills",
+        "progress": 0
+    }
+}
