@@ -15,7 +15,7 @@ class DumpProfilePage extends Component {
         const computedName = name === '' 
                 ? 'HERE WILL BE YOUR NAME' 
                 : surname === '' ? name : name + ' ' + surname;
-        const computedImage = image === '' ? img.imgTemporary : { uri: image } 
+        const computedImage = image || img.imgTemporary; 
         const mainInfo = `${title} from ${computedTitle}.`;
         return (
             <View>

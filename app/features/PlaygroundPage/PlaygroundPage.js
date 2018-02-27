@@ -37,7 +37,7 @@ class DumpPlaygroundPage extends Component {
             progressBarData: [],
             opened: false,
             loading: true,
-            image: !!this.props.image ? { uri: this.props.image } : img.imgTemporary || null
+            image: this.props.image || img.imgTemporary 
         }
     }
     componentDidMount() {
@@ -123,7 +123,7 @@ class DumpPlaygroundPage extends Component {
                         startAction={this.startAction}
                         />
                 </Modal>
-                <Header menu 
+                <Header back 
                         navigation={this.props.navigation} 
                         title={'Epamer'} 
                         navigateTo={'Login page'}/>
