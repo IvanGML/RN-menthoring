@@ -9,7 +9,7 @@ export class AboutPage extends Component {
     render() {
         return (
             <View>
-                <Header back title={'About'} navigation={this.props.navigation} navigateTo={'Playground'} menu/>
+                <Header back title={'About'} navigation={this.props.navigation} navigateTo={'Playground'} />
                 <ScrollView>
                     <View style={styles.mainContent}>
                         <Text style={styles.text}>

@@ -41,9 +41,9 @@ class DumpEditProfilePage extends Component {
   saveChanges = () => {
     console.log(this.state.id);
     this.props.setAge(this.returnState(this.state), this.state.id);
-    this.props.navigation.navigate('Profile');
+    this.props.navigation.navigate('Playground');
   };
-  discardChanges = () => this.props.navigation.navigate('Profile');
+  discardChanges = () => this.props.navigation.navigate('Playground');
   handleName = name => this.setState({name});
   handleSurname = surname => this.setState({surname});
   handleCompany = company => this.setState({company});

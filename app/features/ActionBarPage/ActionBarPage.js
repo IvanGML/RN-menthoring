@@ -76,9 +76,7 @@ class DumpActionBarPage extends Component {
                 <TouchableOpacity style={styles.actionBarCloseButton}
                       onPress={this.props.switch}>
                     <View style={styles.closeButtonContainer}>
-                      <Text>
-                        {'Quite'};
-                      </Text>
+                      <Text>{'Quite'}</Text>
                     </View>
                 </TouchableOpacity>
                 <View style={styles.actionBarTitleContainer}>
