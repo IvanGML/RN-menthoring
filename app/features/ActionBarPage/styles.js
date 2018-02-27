@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     },
     closeButtonContainer: {
         margin: style.MARGIN,
-        alignSelf: 'flex-end',
+        alignSelf: 'center',
         width: dimension,
         height: dimension,
         borderColor: style.ACTIONBAR_CONTROLL,

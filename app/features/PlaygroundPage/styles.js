@@ -11,16 +11,11 @@ const styles = StyleSheet.create({
             marginBottom: 130,
         },
         imageContainer: {
-            paddingTop: 30,
-            alignItems: 'center',
-            justifyContent: 'center',
-            position: 'relative',
-            // height: 400,
+            marginTop: 30,
         },
         image: {
-            // flexGrow: 2,
             height: 300,
-            width: 300,
+            width: '100%',
         },
         playerTitle: {
             color: style.PLAYER_TITLE,
@@ -29,16 +24,14 @@ const styles = StyleSheet.create({
             marginBottom: 15,
         },
         touchMe: {
-            fontSize: 30,
-            color: 'red',
-            top: '45%',
-            left: '23%',
-            fontWeight: 'bold',
-            // justifyContent: 'center',
-            // alignItems: 'center',
-            zIndex: 1,
-            position: 'absolute'
-        }
+          fontSize: 30,
+          color: 'gray',
+          bottom: '10%',
+          textAlign: 'center',
+          fontWeight: 'bold',
+          zIndex: 1,
+          position: 'absolute'
+        },
     }
 );
 

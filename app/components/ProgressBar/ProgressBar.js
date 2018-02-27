@@ -5,6 +5,7 @@ import { View,
     LayoutAnimation,
     Platform,
     UIManager } from 'react-native';
+import Icon from 'react-native-vector-icons/dist/Ionicons';
 import { styles } from './styles';
 
 if (Platform.OS === 'android') {
@@ -20,18 +21,17 @@ class ProgressBar extends Component {
         }
     }
     actionIcon = title => {
-        let text = <Text>{null}</Text>
         switch (title) {
             case 'Personal':
-                return text;
+                return <Icon name="ios-home" size={30} color="gray" />;
             case 'Project Activity':
-                return text;
+                return <Icon name="ios-build-outline" size={30} color="gray" />;
             case 'Soft Skills':
-                return text;
+                return <Icon name="ios-people" size={30} color="gray" />;
             case 'Hard Skills':
-                return text;
+                return <Icon name="md-briefcase" size={30} color="gray" />;
             default:
-                return text;
+                return <Icon name="ios-people" size={30} color="gray" />;
         }
     }
     click = () => {

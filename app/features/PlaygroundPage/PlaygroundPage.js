@@ -45,8 +45,8 @@ class DumpPlaygroundPage extends Component {
       // let image = this.props.image ?  : img.imgTemporary;
       // this.setState({image})
       /*navigate to logo page if user is not loggined on*/
-        // let { user } = this.props;
-        // if (!user) this.props.navigation.navigate('Login page');
+        let { user } = this.props;
+        if (!user) this.props.navigation.navigate('Login page');
     }
     
     progressBarRender = () => {
@@ -97,7 +97,7 @@ class DumpPlaygroundPage extends Component {
                         activeOpacity={1}
                         onPress={this.switchModal}>
                         <View>
-                            <Text style={styles.touchMe}>{'TOUCH ME!!!'}</Text>
+                            <Text style={styles.touchMe}>{'Make your inner programer stronger. Touch the picture.'}</Text>
                             <Image source={this.state.image}
                                 style={styles.image}/>
                         </View>

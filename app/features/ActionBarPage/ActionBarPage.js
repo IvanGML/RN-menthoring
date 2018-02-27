@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {ScrollView, View, Text, TouchableOpacity, TouchableHighlight} from 'react-native';
+import Icon from 'react-native-vector-icons/dist/Ionicons';
 import {styles} from './styles';
 import {firebaseApp} from '../../firebase';
 import {goToOffice, 
@@ -21,19 +22,19 @@ const Trigger = props => {
     let actionIcon = () => {
         switch (props.title) {
             case HOME:
-                return null;
+                return <Icon name="ios-home" size={40} color="white" />;
             case OFFICE:
-                return null;
+                return <Icon name="md-briefcase" size={40} color="white" />;
             case TECH_TALK:
-                return null;
+                return <Icon name="ios-microphone" size={40} color="white" />;
             case SOFT_SKILLS:
-                return null;
+                return <Icon name="ios-people" size={40} color="white" />;
             case SELF_DEV:
-                return null;
+                return <Icon name="ios-build-outline" size={40} color="white" />;
             case SLEEP:
-                return null;
+                return <Icon name="ios-refresh-circle" size={40} color="white" />;
             default:
-                return null;
+                return <Icon name="ios-settings" size={40} color="white" />;
         }
     }
     let currentAction = () => {
@@ -73,29 +74,32 @@ class DumpActionBarPage extends Component {
         const actionBars = this.actionBarsRender();
         return (
             <ScrollView style={styles.actionBarContainer}>
-                <TouchableOpacity style={styles.actionBarCloseButton}
-                      onPress={this.props.switch}>
-                    <View style={styles.closeButtonContainer}>
-                      <Text>{'Quite'}</Text>
-                    </View>
-                </TouchableOpacity>
+                
                 <View style={styles.actionBarTitleContainer}>
                     <View style={styles.userNameContainer}>
                         <Text style={styles.userName}>
                             <Text style={styles.userNameDecoration}>&#60;</Text>
-                                Username
+                                {`${this.props.name} ${this.props.surname}`}
                             <Text style={styles.userNameDecoration}>&#62;</Text>
                         </Text>
                     </View>
                     <View style={styles.userTitleContainer}>
                         <Text style={styles.userTitle}>
-                            Junior Softwere Engineer
+                            {this.props.title}
                         </Text>
                     </View>
                 </View>
                 <View style={styles.actionBarControllsContainer}>
                     {actionBars}
                 </View>
+                <TouchableOpacity style={styles.actionBarCloseButton}
+                      onPress={this.props.switch}>
+                    <View style={styles.closeButtonContainer}>
+                      <Text>
+                        <Icon name="ios-arrow-back" size={30} color="white" />
+                      </Text>
+                    </View>
+                </TouchableOpacity>
             </ScrollView>
         );
     }
@@ -104,9 +108,12 @@ class DumpActionBarPage extends Component {
 
 mapStateToProps = state => {
     return {
+        surname: state.userData.personalData.playerSurname,
+        name: state.userData.personalData.playerName,
         data: state.userData.data,
         typesOfAction: state.userData.typesOfAction,
-        id: state.userInfo.userFetched.uid
+        id: state.userInfo.userFetched.uid,
+        title: state.userData.personalData.playerTitle,
     }
 }
 
