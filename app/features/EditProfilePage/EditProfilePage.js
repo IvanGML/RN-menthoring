@@ -76,7 +76,9 @@ class DumpEditProfilePage extends Component {
      * The first arg is the options object for customization (it can also be null or omitted for default options),
      * The second arg is the callback which sends object: response (more info below in README)
      */
-    ImagePicker.launchImageLibrary(options, (response)  => {
+    console.log('ImagePicker', ImagePicker);
+    console.log('ImagePicker.launchImageLibrary', ImagePicker.launchImageLibrary);
+    ImagePicker.showImagePicker(options, (response)  => {
       console.log('Response = ', response);
     
       if (response.didCancel) {

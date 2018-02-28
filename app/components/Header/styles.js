@@ -19,7 +19,8 @@ const styles = StyleSheet.create({
     normalText: {
         color: style.HEADER_TEXT,
         fontSize: 30,
-        fontWeight: '700'
+        fontWeight: '700',
+        textAlign: 'center',
     },
     rightControll: {
         position: 'absolute',
