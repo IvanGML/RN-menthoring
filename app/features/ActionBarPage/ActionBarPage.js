@@ -4,6 +4,7 @@ import {ScrollView, View, Text, TouchableOpacity, TouchableHighlight} from 'reac
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 import {styles} from './styles';
 import {firebaseApp} from '../../firebase';
+import PushNotification from 'react-native-push-notification';
 import {goToOffice, 
         goToHome, 
         goToTechTalk, 
@@ -38,7 +39,14 @@ const Trigger = props => {
         }
     }
     let currentAction = () => {
-        props.closeActionBar(props.title, props.data, props.id);
+      PushNotification.localNotificationSchedule({
+        message: "Action bar again unlocked!",
+        bigText: `After your action "${props.title}" you full of enthusiasm to act again.
+        
+COMMMOOON!`,
+        date: new Date(Date.now() + (10 * 1000))
+      });
+      props.closeActionBar(props.title, props.data, props.id);
     }
     return (<View style={styles.actionButtonContainer}>
                 <TouchableOpacity
