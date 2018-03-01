@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {ScrollView, View, Text, TouchableOpacity, TouchableHighlight, PushNotificationIOS} from 'react-native';
+import {ScrollView, View, Text, TouchableOpacity, TouchableHighlight, PushNotificationIOS, Platform} from 'react-native';
 import Icon from 'react-native-vector-icons/dist/Ionicons';
 import {styles} from './styles';
 import {firebaseApp} from '../../firebase';
@@ -39,21 +39,23 @@ const Trigger = props => {
         }
     }
     let currentAction = () => {
-      PushNotification.localNotificationSchedule({
-        message: 'Action bar again unlocked!',
-        bigText: `After your action "${props.title}" you full of enthusiasm to act again.
-        
-COMMMOOON!`,
-        date: new Date(Date.now() + (10 * 1000))
-      });
-      PushNotificationIOS.scheduleLocalNotification({
-        fireDate: new Date(Date.now() + 10 * 1000),
-        alertTitle: 'Action bar again unlocked!',
-        alertBody: `After your action "${props.title}" you full of enthusiasm to act again.
-        
-COMMMOOON!`,
-      });
-      console.log(PushNotification);
+      if (Platform.OS !== 'android') {
+        PushNotificationIOS.scheduleLocalNotification({
+          fireDate: new Date(Date.now() + 10 * 1000),
+          alertTitle: 'Action bar again unlocked!',
+          alertBody: `After your action "${props.title}" you full of enthusiasm to act again.
+          
+  COMMMOOON!`,
+        });
+      } else {
+        PushNotification.localNotificationSchedule({
+          message: 'Action bar again unlocked!',
+          bigText: `After your action "${props.title}" you full of enthusiasm to act again.
+          
+  COMMMOOON!`,
+          date: new Date(Date.now() + (10 * 1000))
+        });
+      }
       props.closeActionBar(props.title, props.data, props.id);
     }
     return (<View style={styles.actionButtonContainer}>
